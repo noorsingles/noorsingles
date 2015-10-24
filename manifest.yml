@@ -1,0 +1,6 @@
+applications:
+- name: noorsingles
+  memory: 512M
+  host: noorsingles
+  path: target/noorsingles-1.0-SNAPSHOT.war
+  domain: www.noorsingles.com

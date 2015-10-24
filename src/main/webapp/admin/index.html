@@ -1,0 +1,29 @@
+<html ng-app="admin">
+    <head>
+        <title>Admin Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <link type="image/x-icon" href="images/favicon.ico" />
+    </head>
+    <body>
+        <div class="container">
+            
+            <h2>Admin Control</h2>
+            
+            <div ui-view></div>
+            <!--<div ng-controller="AlertDemoCtrl">
+              <alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+              <button class='btn btn-default' ng-click="addAlert()">Add Alert</button>
+            </div>-->
+        </div>
+        <script src="../js/angular.min.js"></script>
+        <script src="../js/jquery.min.js"></script>
+        <script src="../js/ui-bootstrap-tpls-0.12.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.min.js"></script>
+        <script src='js/admin.js'></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<a class="button-clear" style="cursor: pointer;color:black;text-decoration: none;" onclick="history.back();">
+    <i class="fa fa-arrow-left"></i> Back
+</a>
+
+
+<h2 class="page-header">Profile</h2>
+<div class="row text-right">
+    <a target="_blank" href="mailto:match@noorsingles.com?Subject=Request%20to%20contact%20Profile%23%20{{profile.id}}&Body=I%20have%20a%20profile%20at%20noorsingles.com%20with%20this%20email%20address%2C%20and%20would%20like%20to%20contact%20the%20person%20owns%20profile%20%23{{profile.id}}.%20%0A%0APlease%20share%20my%20name%20and%20email%20address%20with%20this%20person%20%2C%20and%20if%20this%20person%20approves%20%2C%20send%20me%20his/her%20contact%20information." class="btn btn-lg btn-primary">Contact</a>
+</div>
+
+
+<table class="table table-hover"  ng-show="!!!!profile.privateFields.length">
+<tr>
+    <th class="danger" colspan="2">Contact Info</th>
+
+    </tr>
+    <tr ng-repeat="pf in profile.privateFields">
+        <th  class="active"  style="width: 50%;">{{pf.label}}</th><td>{{pf.value}}</td>
+    </tr>
+    
+</table>
+
+
+
+<table class="table table-hover">
+    <tr>
+        <th colspan="2" class="success">About Me</th>
+    </tr>
+    <tr>
+        <th class="active">Record Number</th>
+        <td><a href="datatable#/profile/{{profile.hashCode}}">{{profile.hashCode}}</a></td>
+    </tr>
+    <tr ng-repeat="f in profile.publicFields" ng-if="f.label != '' && f.label != 'Record Number' && f.label != 'Timestamp'">
+        <th  class="active"  style="width: 50%;">{{f.label}}</th><td>{{f.value}}</td>
+    </tr>
+</table>
+
+<table class="table table-hover">
+<tr>
+    <th class="warning" colspan="2">Looking For</th>
+
+    </tr>
+    <tr ng-repeat="pf in profile.preferenceFields">
+        <th  class="active"  style="width: 50%;">{{pf.label | removeP }}</th><td>{{pf.value}}</td>
+    </tr>
+    
+</table>
+<div class="row text-right">
+    <a target="_blank" href="mailto:match@noorsingles.com?Subject=Request%20to%20contact%20Profile%23%20{{profile.id}}&Body=I%20am%20%3CPlace%20Your%20Name%20here%20%3E%20%0AI%20have%20a%20profile%20at%20noorsingles.com%20with%20this%20email%20address%2C%20and%20would%20like%20to%20contact%20the%20person%20owns%20profile%20%23{{profile.id}}.%20%0A%0APlease%20share%20my%20name%20and%20email%20address%20with%20this%20person%20%2C%20and%20if%20this%20person%20approve%20%2C%20send%20me%20his/her%20contact%20information." class="btn btn-lg btn-primary">Contact</a>
+</div>

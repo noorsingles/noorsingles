@@ -1,0 +1,71 @@
+<div ng-controller="SearchController">
+
+    <div class="col-lg-4">
+        <form ng-submit="searchForId()">
+            <div class="row">
+                <div class="form-group">
+                    <label for="id">Main Person</label>
+                    <input type="text" id="id" class="form-control" placeholder="id" ng-model="id">
+                    <button class="btn btn-primary" style="margin-top: 3px;" id="submit" type="submit" class="btn btn-default">Search</button>
+                </div>
+            </div>
+            
+        </form>
+        
+        <form ng-submit="searchForMatchId()">
+            <div class="row">
+                <div class="form-group">
+                    <label for="id">Match</label>
+                    <input type="text" id="id" class="form-control" placeholder="id" ng-model="matchId">
+                    <button class="btn btn-primary" style="margin-top: 3px;" id="submit" type="submit" class="btn btn-default">Search</button>
+                </div>
+            </div>
+            
+        </form>
+        
+         <form ng-submit="goToEmailProfile()">
+            <div class="row">
+                <div class="form-group">
+                    <label for="email">Email By Profile</label>
+                    <input type="text" id="email" class="form-control" placeholder="email" ng-model="email"> <a href="../datatable#/profileByEmail/{{email}}" target="_blank" class="btn btn-default">Go</a>
+                </div>
+            </div>
+            
+        </form>
+     <button class="btn btn-default" ng-click="logout()">Logout</button>   
+    </div>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-6" style="border: 1px solid lightgray; border-radius: 10px;margin-bottom: 20px;">
+        <div class="row">
+            <div class="col-lg-4"><b>LINKS</b></div>
+            <div class="col-lg-8">
+                <a href="../datatable#/profile/{{mainProfile.id}}" target="_blank">Profile #{{mainProfile.id}}</a> | 
+                <a href="mailto:{{mainProfile.email}}" target="_blank">Email</a> |
+                <a href="mailto:{{mainProfile.email}}" target="_blank">Completed</a> |
+            </div>
+        </div>
+        <div class="row" ng-repeat="field in mainProfile.privateFields">    
+            <div class="col-lg-4"><b>{{field.label}}</b></div>
+            <div  class="col-lg-8">{{field.value}}</div>
+        </div>
+    </div>
+    
+    <div ng-repeat="matchProfile in matches">
+       
+
+    <div class="col-lg-12" style="border: 1px solid lightgray; border-radius: 10px; background: lightsteelblue;">
+        <div class="row">
+            <div class="col-lg-4"><b>LINKS</b></div>
+            <div class="col-lg-8"> 
+                <a href="../datatable#/profile/{{matchProfile.id}}" target="_blank">Profile #{{matchProfile.id}}</a> |
+                <A HREF="mailto:{{matchProfile.email}}?Subject=Match%20Request%20from%20profile%20%23{{mainProfile.id}}&Body=Salam%20Alaykom%2C%20%0A%0AThe%20person%20owns%20below%20profile%20is%20interested%20to%20contact%20you.%20Please%20take%20a%20look%20and%20let%20us%20know%20if%20you%20are%20interested%20so%20we%20can%20connect%20you%20both%20together.%20%0A%0Ahttp%3A//www.noorsingles.com/datatable%23/profile/{{mainProfile.id}}%0A%0AYour%20profile%20%23{{matchProfile.id}}%0A%0A--%0ANoor%20Singles%20Team" target="_blank"> Match Request</A>
+                
+            </div>
+        </div>
+        <div class="row" ng-repeat="field in matchProfile.privateFields">    
+            <div class="col-lg-4"><b>{{field.label}}</b></div>
+            <div  class="col-lg-8">{{field.value}}</div>
+        </div>
+    </div>
+    </div>
+</div>
